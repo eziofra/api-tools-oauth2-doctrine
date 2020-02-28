@@ -3,13 +3,13 @@
 namespace ZFTest\OAuth2\Doctrine\ORM;
 
 use Doctrine\ORM\Tools\SchemaTool;
-use ZF\OAuth2\Doctrine\Entity;
+use Laminas\ApiTools\OAuth2\Doctrine\Entity;
 use ZFTest\OAuth2\Doctrine\Entity\User;
-use Zend\Crypt\Password\Bcrypt;
+use Laminas\Crypt\Password\Bcrypt;
 use Datetime;
 use Exception;
 
-abstract class AbstractTest extends \Zend\Test\PHPUnit\Controller\AbstractHttpControllerTestCase
+abstract class AbstractTest extends \Laminas\Test\PHPUnit\Controller\AbstractHttpControllerTestCase
 {
     public function provideStorage()
     {
@@ -38,7 +38,7 @@ abstract class AbstractTest extends \Zend\Test\PHPUnit\Controller\AbstractHttpCo
         $objectManager = $serviceManager->get('doctrine.entitymanager.orm_default');
 
         try {
-            $objectManager->getRepository('ZF\OAuth2\Doctrine\Entity\Scope')->findAll();
+            $objectManager->getRepository('Laminas\ApiTools\OAuth2\Doctrine\Entity\Scope')->findAll();
         } catch (Exception $e) {
             $bcrypt = new Bcrypt();
             $bcrypt->setCost(10);

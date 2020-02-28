@@ -1,6 +1,6 @@
 <?php
 
-namespace ZF\OAuth2\Doctrine\Adapter;
+namespace Laminas\ApiTools\OAuth2\Doctrine\Adapter;
 
 use OAuth2\OpenID\Storage\UserClaimsInterface as OpenIDUserClaimsInterface;
 use OAuth2\OpenID\Storage\AuthorizationCodeInterface as OpenIDAuthorizationCodeInterface;
@@ -14,19 +14,19 @@ use OAuth2\Storage\ScopeInterface;
 use OAuth2\Storage\PublicKeyInterface;
 use DoctrineModule\Persistence\ObjectManagerAwareInterface;
 use Doctrine\Common\Collections\ArrayCollection;
-use Zend\Crypt\Password\Bcrypt;
-use Zend\Mvc\MvcEvent;
-use Zend\ServiceManager\ServiceLocatorInterface;
-use ZF\OAuth2\Doctrine\EventListener\DynamicMappingSubscriber;
+use Laminas\Crypt\Password\Bcrypt;
+use Laminas\Mvc\MvcEvent;
+use Laminas\ServiceManager\ServiceLocatorInterface;
+use Laminas\ApiTools\OAuth2\Doctrine\EventListener\DynamicMappingSubscriber;
 use DoctrineModule\Persistence\ProvidesObjectManager as ProvidesObjectManagerTrait;
-use ZF\OAuth2\Doctrine\Mapper\MapperManager;
+use Laminas\ApiTools\OAuth2\Doctrine\Mapper\MapperManager;
 use Doctrine\ORM\Mapping\Driver\XmlDriver;
-use Zend\Config\Config;
+use Laminas\Config\Config;
 use Exception;
 use DateTime;
 
-use Zend\EventManager\EventManagerAwareInterface;
-use Zend\EventManager\EventManagerAwareTrait;
+use Laminas\EventManager\EventManagerAwareInterface;
+use Laminas\EventManager\EventManagerAwareTrait;
 
 /**
  * Doctrine storage for OAuth2
@@ -156,7 +156,7 @@ class DoctrineAdapter implements
         // Enable default entities
         if (isset($this->getConfig()->enable_default_entities) && $this->getConfig()->enable_default_entities) {
             $chain = $serviceManager->get($this->getConfig()->driver);
-            $chain->addDriver(new XmlDriver(__DIR__ . '/../../config/orm'), 'ZF\OAuth2\Doctrine\Entity');
+            $chain->addDriver(new XmlDriver(__DIR__ . '/../../config/orm'), 'Laminas\ApiTools\OAuth2\Doctrine\Entity');
         }
 
         if (isset($this->getConfig()->dynamic_mapping) && $this->getConfig()->dynamic_mapping) {
@@ -673,7 +673,7 @@ class DoctrineAdapter implements
         $mapper = $this->getMapperManager()->get('AuthorizationCode');
         $mapper->exchangeDoctrineArray($authorizationCode->getArrayCopy());
 
-        $authorizationCodeClientAssertion = new \ZF\OAuth2\Doctrine\ClientAssertionType\AuthorizationCode();
+        $authorizationCodeClientAssertion = new \Laminas\ApiTools\OAuth2\Doctrine\ClientAssertionType\AuthorizationCode();
         $authorizationCodeClientAssertion->exchangeArray($mapper->getOAuth2ArrayCopy());
 
         return $authorizationCodeClientAssertion;

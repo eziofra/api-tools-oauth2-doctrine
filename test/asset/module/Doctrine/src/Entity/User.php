@@ -2,8 +2,8 @@
 
 namespace ZFTest\OAuth2\Doctrine\Entity;
 
-use ZF\OAuth2\Doctrine\Entity\UserInterface;
-use Zend\Stdlib\ArraySerializableInterface;
+use Laminas\ApiTools\OAuth2\Doctrine\Entity\UserInterface;
+use Laminas\Stdlib\ArraySerializableInterface;
 
 class User implements UserInterface, ArraySerializableInterface
 {

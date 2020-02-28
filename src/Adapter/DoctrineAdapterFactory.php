@@ -4,18 +4,18 @@
  * @copyright Copyright (c) 2014 Zend Technologies USA Inc. (http://www.zend.com)
  */
 
-namespace ZF\OAuth2\Doctrine\Adapter;
+namespace Laminas\ApiTools\OAuth2\Doctrine\Adapter;
 
 use Doctrine\Common\Persistence\ObjectManager;
 use Interop\Container\ContainerInterface;
 use Interop\Container\Exception\ContainerException;
 use InvalidArgumentException;
-use Zend\ServiceManager\Exception\ServiceNotFoundException;
-use Zend\ServiceManager\FactoryInterface;
-use Zend\ServiceManager\ServiceLocatorInterface;
-use Zend\ServiceManager\Exception\ServiceNotCreatedException;
-use Zend\Config\Config;
-use ZF\OAuth2\Doctrine\Mapper\MapperManager;
+use Laminas\ServiceManager\Exception\ServiceNotFoundException;
+use Laminas\ServiceManager\FactoryInterface;
+use Laminas\ServiceManager\ServiceLocatorInterface;
+use Laminas\ServiceManager\Exception\ServiceNotCreatedException;
+use Laminas\Config\Config;
+use Laminas\ApiTools\OAuth2\Doctrine\Mapper\MapperManager;
 
 class DoctrineAdapterFactory implements FactoryInterface
 {
@@ -37,8 +37,8 @@ class DoctrineAdapterFactory implements FactoryInterface
 
     /**
      * @param ServiceLocatorInterface $services
-     * @throws \ZF\OAuth2\Controller\Exception\RuntimeException
-     * @return \ZF\OAuth2\Doctrine\Adapter\DoctrineAdapter
+     * @throws \Laminas\ApiTools\OAuth2\Controller\Exception\RuntimeException
+     * @return \Laminas\ApiTools\OAuth2\Doctrine\Adapter\DoctrineAdapter
      */
     public function createService(ServiceLocatorInterface $services)
     {
@@ -50,7 +50,7 @@ class DoctrineAdapterFactory implements FactoryInterface
      * @param string $objectManagerAlias
      *
      * @return ObjectManager
-     * @throws \Zend\ServiceManager\Exception\ServiceNotCreatedException
+     * @throws \Laminas\ServiceManager\Exception\ServiceNotCreatedException
      * @throws InvalidArgumentException
      */
     protected function loadObjectManager($services, $objectManagerAlias)
@@ -75,7 +75,7 @@ class DoctrineAdapterFactory implements FactoryInterface
      * @param Config $config
      *
      * @return MapperManager
-     * @throws \Zend\ServiceManager\Exception\ServiceNotCreatedException
+     * @throws \Laminas\ServiceManager\Exception\ServiceNotCreatedException
      * @throws InvalidArgumentException
      */
     protected function loadMapperManager($services, Config $config)
@@ -84,12 +84,12 @@ class DoctrineAdapterFactory implements FactoryInterface
             throw new InvalidArgumentException('Invalid container');
         }
 
-        if ($services->has('ZF\OAuth2\Doctrine\Mapper\MapperManager')) {
+        if ($services->has('Laminas\ApiTools\OAuth2\Doctrine\Mapper\MapperManager')) {
             $mapperManager = new MapperManager($services);
         } else {
             // @codeCoverageIgnoreStart
             throw new ServiceNotCreatedException(
-                'The MapperManager ZF\OAuth2\Doctrine\Mapper\MapperManager could not be found.'
+                'The MapperManager Laminas\ApiTools\OAuth2\Doctrine\Mapper\MapperManager could not be found.'
             );
         }
         // @codeCoverageIgnoreEnd
@@ -133,7 +133,7 @@ class DoctrineAdapterFactory implements FactoryInterface
             throw new InvalidArgumentException('Invalid container');
         }
 
-        $adapter = $container->get('ZF\OAuth2\Doctrine\Adapter\DoctrineAdapter');
+        $adapter = $container->get('Laminas\ApiTools\OAuth2\Doctrine\Adapter\DoctrineAdapter');
 
         $adapter->setConfig($this->config);
         $adapter->setObjectManager($this->loadObjectManager($container, $this->config->object_manager));

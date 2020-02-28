@@ -1,13 +1,13 @@
 OAuth2 Doctrine ORM Adapter for Apigility
 =========================================
 
-[![Build Status](https://travis-ci.org/API-Skeletons/zf-oauth2-doctrine.svg)](https://travis-ci.org/API-Skeletons/zf-oauth2-doctrine)
-[![Documentation Status](https://readthedocs.org/projects/doctrine-in-apigility-docs/badge/?version=latest)](http://doctrine-in-apigility-docs.readthedocs.io/en/latest/zf-oauth2-doctrine/index.html)
+[![Build Status](https://travis-ci.org/API-Skeletons/api-tools-oauth2-doctrine.svg)](https://travis-ci.org/API-Skeletons/api-tools-oauth2-doctrine)
+[![Documentation Status](https://readthedocs.org/projects/doctrine-in-apigility-docs/badge/?version=latest)](http://doctrine-in-apigility-docs.readthedocs.io/en/latest/api-tools-oauth2-doctrine/index.html)
 [![Gitter](https://badges.gitter.im/api-skeletons/open-source.svg)](https://gitter.im/api-skeletons/open-source)
 [![Patreon](https://img.shields.io/badge/patreon-donate-yellow.svg)](https://www.patreon.com/apiskeletons)
-[![Total Downloads](https://poser.pugx.org/api-skeletons/zf-oauth2-doctrine/downloads)](https://packagist.org/packages/api-skeletons/zf-oauth2-doctrine)
+[![Total Downloads](https://poser.pugx.org/api-skeletons/api-tools-oauth2-doctrine/downloads)](https://packagist.org/packages/api-skeletons/api-tools-oauth2-doctrine)
 
-This provides a Doctrine adapter for [zfcampus/zf-mvc-auth](https://github.com/zfcampus/zf-mvc-auth) and [zfcampus/zf-oauth2](https://github.com/zfcampus/zf-oauth2) and entity definitions for all aspects of OAuth2 including Authorization Code, Access Tokens, Refresh Tokens, JWT & JTI, and Scopes.
+This provides a Doctrine adapter for [laminas-api-tools/api-tools-mvc-auth](https://github.com/laminas-api-tools/api-tools-mvc-auth) and [laminas-api-tools/api-tools-oauth2](https://github.com/laminas-api-tools/api-tools-oauth2) and entity definitions for all aspects of OAuth2 including Authorization Code, Access Tokens, Refresh Tokens, JWT & JTI, and Scopes.
 
 
 Versions
@@ -17,8 +17,8 @@ Versions
 * 2.x series is for PHP 7.1 onward.
 * 3.x series is for PHP 7.1 onward and uses bigint instead of integer, scope fixture, and bcrypt cost of 10.
 
-![Entity Relationship Diagram](https://raw.githubusercontent.com/API-Skeletons/zf-oauth2-doctrine/master/media/oauth2-doctrine-erd.png)
+![Entity Relationship Diagram](https://raw.githubusercontent.com/API-Skeletons/api-tools-oauth2-doctrine/master/media/oauth2-doctrine-erd.png)
 Entity Relationship Diagram created with [Skipper](https://skipper18.com)
 
-[Read The Documentation](http://doctrine-in-apigility-docs.readthedocs.io/en/latest/zf-oauth2-doctrine/index.html)
+[Read The Documentation](http://doctrine-in-apigility-docs.readthedocs.io/en/latest/api-tools-oauth2-doctrine/index.html)
 ======

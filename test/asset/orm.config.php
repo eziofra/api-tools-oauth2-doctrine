@@ -1,18 +1,18 @@
 <?php
 
 $modules = [
-    'ZF\ContentNegotiation',
-    'ZF\\ApiProblem',
-    'ZF\\MvcAuth',
-    'ZF\\OAuth2',
-    'ZF\\OAuth2\\Doctrine',
+    'Laminas\ApiTools\ContentNegotiation',
+    'Laminas\\ApiTools\\ApiProblem',
+    'Laminas\\ApiTools\\MvcAuth',
+    'Laminas\\ApiTools\\OAuth2',
+    'Laminas\\ApiTools\\OAuth2\\Doctrine',
     'ZFTest\\OAuth2\\Doctrine',
     'DoctrineModule',
     'DoctrineORMModule',
 ];
 
-if (class_exists(Zend\Router\Module::class)) {
-    $modules[] = 'Zend\\Router';
+if (class_exists(Laminas\Router\Module::class)) {
+    $modules[] = 'Laminas\\Router';
 }
 
 return [

@@ -1,8 +1,8 @@
 <?php
 
-namespace ZF\OAuth2\Doctrine\Entity;
+namespace Laminas\ApiTools\OAuth2\Doctrine\Entity;
 
-use Zend\Stdlib\ArraySerializableInterface;
+use Laminas\Stdlib\ArraySerializableInterface;
 use Doctrine\Common\Collections\ArrayCollection;
 
 /**
@@ -66,7 +66,7 @@ class Client implements ArraySerializableInterface
     private $jti;
 
     /**
-     * @var \ZF\OAuth2\Doctrine\Entity\PublicKey
+     * @var \Laminas\ApiTools\OAuth2\Doctrine\Entity\PublicKey
      */
     private $publicKey;
 

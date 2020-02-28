@@ -1,6 +1,6 @@
 <?php
 
-namespace ZF\OAuth2\Doctrine\Mapper;
+namespace Laminas\ApiTools\OAuth2\Doctrine\Mapper;
 
 class Scope extends AbstractMapper
 {
