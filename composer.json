@@ -1,11 +1,18 @@
 {
-    "name": "api-skeletons/api-tools-oauth2-doctrine",
+    "name": "eziofra/api-tools-oauth2-doctrine",
     "description": "Doctrine OAuth2 Server Adapter for Apigility",
     "license": "MIT",
     "keywords": [
         "oauth2",
         "doctrine",
-        "apigility"
+        "api-tools",
+        "laminas"
+    ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/eziofra/api-tools-oauth2-doctrine"
+        }
     ],
     "require": {
         "php": ">=7.1",
